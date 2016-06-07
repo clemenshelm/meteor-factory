@@ -88,9 +88,7 @@ Factory.build = (name, attributes = {}, options = {}) => {
 
       const modifier = {$set: {}};
 
-      if (key !== '_id') {
-        modifier.$set[key] = newValue;
-      }
+      modifier.$set[key] = newValue;
 
       LocalCollection._modify(record, modifier);
     });
